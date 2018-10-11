@@ -45,6 +45,16 @@ class Usuarios extends CI_Controller {
 		// definir los campos obligatorios
 		$this->crud->required_fields('nombre','usuario','clave','foto','telefono','whatsapp','skype','tipodeusuario');
 		$this->crud->display_as('tipodeusuario','Selecciona el tipo de usuario');
+		/***
+		 * si deseamos antes del proceso de insercion realizar una funcion o proceso,
+		 * usamos callback_before_insert. se le deben pasar dos parametros, el primero que indique que campos
+		 * revisar y el segundo la funcion que se debe ejecutar 
+		 */
+		$this->crud->callback_before_insert(array($this,'encriptar'));
+		/***
+		 * Cuando se este en el estado editar que n o s e muestre el campo de clave
+		 */
+		if ($this->crud->getState()=='edit') $this->crud->field_type('clave','hidden');
 
 		$tabla=$this->crud->render();
 
@@ -54,6 +64,13 @@ class Usuarios extends CI_Controller {
 
 
 		$this->load->view('usuarios',$vector);
+	}
+
+	function encriptar($post_array) {
+		// la variable post array es la que guarda los campos o datos enviados al momento de presionar el
+		// boton guardar, se comporta de manera similar al $_POST
+		$post_array['clave']=sha1($post_array['clave']);
+		return $post_array;
 	}
 }
 

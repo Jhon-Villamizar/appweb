@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-10-2018 a las 01:22:28
+-- Tiempo de generación: 11-10-2018 a las 03:59:39
 -- Versión del servidor: 10.1.28-MariaDB
 -- Versión de PHP: 5.6.32
 
@@ -41,6 +41,25 @@ CREATE TABLE `tblcategoriasdeproductos` (
 
 INSERT INTO `tblcategoriasdeproductos` (`id`, `nombre`, `fechaingreso`, `fechamodificacion`) VALUES
 (1, 'Tecnologia', '2018-10-04 01:14:18', '2018-10-04 01:14:18');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tblclientes`
+--
+
+CREATE TABLE `tblclientes` (
+  `pkid` int(11) NOT NULL,
+  `razonsocial` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `nombrecomercial` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `nit` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
+  `telefono` int(15) NOT NULL,
+  `direccion` varchar(256) COLLATE utf8_spanish_ci NOT NULL,
+  `correo` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
+  `tipodecliente` int(11) NOT NULL,
+  `fechaingreso` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `fechamodificacion` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci COMMENT='almacena los clientes';
 
 -- --------------------------------------------------------
 
@@ -112,7 +131,8 @@ CREATE TABLE `tblusuarios` (
 --
 
 INSERT INTO `tblusuarios` (`pkid`, `nombre`, `usuario`, `clave`, `telefono`, `whatsapp`, `skype`, `foto`, `tipodeusuario`, `fechaingreso`, `fechamodificacion`) VALUES
-(1, 'PEPITO PEREZ', 'pepito@gmail.com', '8cb2237d0679ca88db6464eac60da96345513964', '3216549870', '', '', '', 0, '2018-10-04 01:47:59', '2018-10-04 01:47:59');
+(1, 'PEPITO PEREZ', 'pepito@gmail.com', '8cb2237d0679ca88db6464eac60da96345513964', '3216549870', '3216549870', 'pepitope', 'afbfc-kakashi.jpg', 4, '2018-10-04 01:47:59', '2018-10-04 01:47:59'),
+(2, 'juanita', 'juanita@gmail.com', '8cb2237d0679ca88db6464eac60da96345513964', '3102589461', '3102589461', 'juanita', '1c23c-perros.jpg', 3, '2018-10-11 01:11:57', '2018-10-11 01:11:57');
 
 --
 -- Índices para tablas volcadas
@@ -124,6 +144,13 @@ INSERT INTO `tblusuarios` (`pkid`, `nombre`, `usuario`, `clave`, `telefono`, `wh
 ALTER TABLE `tblcategoriasdeproductos`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `nombre` (`nombre`);
+
+--
+-- Indices de la tabla `tblclientes`
+--
+ALTER TABLE `tblclientes`
+  ADD PRIMARY KEY (`pkid`),
+  ADD UNIQUE KEY `nit` (`nit`);
 
 --
 -- Indices de la tabla `tbltiposdeclientes`
@@ -157,6 +184,12 @@ ALTER TABLE `tblcategoriasdeproductos`
   MODIFY `id` int(9) NOT NULL AUTO_INCREMENT COMMENT 'id ai', AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT de la tabla `tblclientes`
+--
+ALTER TABLE `tblclientes`
+  MODIFY `pkid` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `tbltiposdeclientes`
 --
 ALTER TABLE `tbltiposdeclientes`
@@ -172,7 +205,7 @@ ALTER TABLE `tbltiposusuarios`
 -- AUTO_INCREMENT de la tabla `tblusuarios`
 --
 ALTER TABLE `tblusuarios`
-  MODIFY `pkid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `pkid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
