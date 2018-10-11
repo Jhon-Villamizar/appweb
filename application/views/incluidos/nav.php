@@ -14,7 +14,7 @@ Script que contiene la parte superior o navegacion del app
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="images/img.jpg" alt=""><?php echo $nombreusuario;?>
+                    <img src="http://nakoko.com/wp-content/uploads/2016/07/cara-kakashi-640x400.jpg" alt=""><?php echo $nombreusuario;?>
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
