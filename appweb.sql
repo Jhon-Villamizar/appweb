@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-10-2018 a las 03:59:39
+-- Tiempo de generación: 18-10-2018 a las 02:45:36
 -- Versión del servidor: 10.1.28-MariaDB
 -- Versión de PHP: 5.6.32
 
@@ -60,6 +60,34 @@ CREATE TABLE `tblclientes` (
   `fechaingreso` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `fechamodificacion` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci COMMENT='almacena los clientes';
+
+--
+-- Volcado de datos para la tabla `tblclientes`
+--
+
+INSERT INTO `tblclientes` (`pkid`, `razonsocial`, `nombrecomercial`, `nit`, `telefono`, `direccion`, `correo`, `tipodecliente`, `fechaingreso`, `fechamodificacion`) VALUES
+(1, 'Los Pepitos', 'Pepitos', '123456789321', 300589456, 'la casa', 'pepitos@lospepitos.com', 16574, '2018-10-17 23:21:10', '2018-10-17 23:21:10');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tblproductos`
+--
+
+CREATE TABLE `tblproductos` (
+  `pkid` int(11) NOT NULL,
+  `ref` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
+  `nombre` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
+  `descripcion` text COLLATE utf8_spanish_ci NOT NULL,
+  `categoria` int(11) NOT NULL,
+  `precio` float NOT NULL,
+  `poriva` int(2) NOT NULL,
+  `porarancel` int(2) NOT NULL,
+  `foto1` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
+  `foto2` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
+  `fechaingreso` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `fechamodificacion` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
 
@@ -153,6 +181,12 @@ ALTER TABLE `tblclientes`
   ADD UNIQUE KEY `nit` (`nit`);
 
 --
+-- Indices de la tabla `tblproductos`
+--
+ALTER TABLE `tblproductos`
+  ADD PRIMARY KEY (`pkid`);
+
+--
 -- Indices de la tabla `tbltiposdeclientes`
 --
 ALTER TABLE `tbltiposdeclientes`
@@ -187,6 +221,12 @@ ALTER TABLE `tblcategoriasdeproductos`
 -- AUTO_INCREMENT de la tabla `tblclientes`
 --
 ALTER TABLE `tblclientes`
+  MODIFY `pkid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `tblproductos`
+--
+ALTER TABLE `tblproductos`
   MODIFY `pkid` int(11) NOT NULL AUTO_INCREMENT;
 
 --
