@@ -5,7 +5,7 @@ Script que guarda el menu, el perfil rapido y los botones inferiores del menu
 ?>
 
         <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span><?php echo $titulo;?></span></a>
+              <a href="<?php echo site_url('principal');?>" class="site_title"><i class="fa fa-paw"></i> <span><?php echo $titulo;?></span></a>
             </div>
         
             <div class="clearfix"></div>
@@ -13,7 +13,7 @@ Script que guarda el menu, el perfil rapido y los botones inferiores del menu
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="http://nakoko.com/wp-content/uploads/2016/07/cara-kakashi-640x400.jpg" alt="..." class="img-circle profile_img">
+                <img src="<?php echo base_url().'/assets/imagenes/usuarios/'.$fotousuario ?>" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
                 <span>Bienvenido,</span>

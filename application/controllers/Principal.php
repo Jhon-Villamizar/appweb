@@ -36,6 +36,8 @@ class Principal extends CI_Controller {
 		$vector['remate']=date("Y");
 		// pasar los datos del usuario que esta en las variables de session
 		$vector["nombreusuario"]=$this->session->userdata("nombrecompleto");
+		$vector["fotousuario"]=$this->session->userdata("fotousuario");
+		$vector["idusuario"]=$this->session->userdata("id");
 		$this->load->view('principal',$vector);
 
 	}

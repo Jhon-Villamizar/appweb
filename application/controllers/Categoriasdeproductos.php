@@ -28,6 +28,8 @@ class Categoriasdeproductos extends CI_Controller {
 		$vector['titulo']="Appweb";
 		$vector['remate']=date("Y");
 		$vector["nombreusuario"]=$this->session->userdata("nombrecompleto");
+		$vector["fotousuario"]=$this->session->userdata("fotousuario");
+		$vector["idusuario"]=$this->session->userdata("id");
 		
 		/* 
 		Cargar Los parametros de configuracion

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-10-2018 a las 02:45:36
+-- Tiempo de generación: 18-10-2018 a las 03:59:14
 -- Versión del servidor: 10.1.28-MariaDB
 -- Versión de PHP: 5.6.32
 
@@ -88,6 +88,22 @@ CREATE TABLE `tblproductos` (
   `fechaingreso` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `fechamodificacion` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `tblproductos`
+--
+
+INSERT INTO `tblproductos` (`pkid`, `ref`, `nombre`, `descripcion`, `categoria`, `precio`, `poriva`, `porarancel`, `foto1`, `foto2`, `fechaingreso`, `fechamodificacion`) VALUES
+(1, '00001111', 'radio', '<p>\n	radio inalambrica</p>\n', 1, 200000, 5, 2, '379a2-radio.jpeg', '', '2018-10-18 00:50:18', '2018-10-18 00:50:18'),
+(2, '055445248', 'celular', '<p>\n	celular bonito</p>\n', 1, 800000, 5, 2, '34e5a-celular.jpg', '', '2018-10-18 01:30:45', '2018-10-18 01:30:45'),
+(3, '3549873', 'potatil', '<p>\n	computador portatil</p>\n', 1, 2500000, 5, 2, '88b12-portatil.jpg', '', '2018-10-18 01:52:07', '2018-10-18 01:52:07'),
+(4, '698746513', 'torre', '<p>\n	torre de computador de escritorio</p>\n', 1, 1200000, 5, 2, '21b18-torre.jpeg', '', '2018-10-18 01:52:58', '2018-10-18 01:52:58'),
+(5, '254587', 'pantalla', '<p>\n	pantalla p&agrave;ra computador de escritorio</p>\n', 1, 1200000, 5, 2, 'd2042-pantalla.jpg', '', '2018-10-18 01:53:52', '2018-10-18 01:53:52'),
+(6, '36856541', 'computador', '<p>\n	computador de escritorio</p>\n', 1, 2800000, 5, 2, '23027-pc.jpeg', '', '2018-10-18 01:54:27', '2018-10-18 01:54:27'),
+(7, '65432189', 'tv', '<p>\n	televisor pantalla plana</p>\n', 1, 3000000, 5, 2, 'b7eb6-tv.jpg', '', '2018-10-18 01:55:02', '2018-10-18 01:55:02'),
+(8, '36845212', 'tenis', '<p>\n	zapatos deportivos</p>\n', 1, 200000, 3, 1, '19fe5-zapatos.jpeg', '', '2018-10-18 01:55:51', '2018-10-18 01:55:51'),
+(9, '0121351', 'pantalon', '<p>\n	ropa</p>\n', 1, 50000, 3, 1, '3cced-pantalon.jpeg', '', '2018-10-18 01:56:35', '2018-10-18 01:56:35'),
+(10, '5842155', 'camisa', '<p>\n	ropa</p>\n', 1, 30000, 3, 1, 'cfe44-camisa.jpg', '', '2018-10-18 01:57:06', '2018-10-18 01:57:06');
 
 -- --------------------------------------------------------
 
@@ -227,7 +243,7 @@ ALTER TABLE `tblclientes`
 -- AUTO_INCREMENT de la tabla `tblproductos`
 --
 ALTER TABLE `tblproductos`
-  MODIFY `pkid` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `pkid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `tbltiposdeclientes`

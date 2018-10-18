@@ -58,7 +58,8 @@ class Login extends CI_Controller {
 				'id'=>$data[0]["pkid"],
 				'nombrecompleto'=>$data[0]["nombre"],
 				'correo'=>$data[0]["usuario"],
-				'telefono'=>$data[0]["telefono"]
+				'telefono'=>$data[0]["telefono"],
+				'fotousuario'=>$data[0]["foto"]
 			);
 
 			// invocar la libreria session  metodo set_userdata
